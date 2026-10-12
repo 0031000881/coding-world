@@ -1,0 +1,5 @@
+[phases.build]
+cmds = ["composer install --no-dev --optimize-autoloader"]
+
+[start]
+cmd = "mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache && php artisan config:cache && php artisan migrate --force && php -S 0.0.0.0:$PORT -t public"
